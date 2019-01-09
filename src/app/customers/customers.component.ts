@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from '../customer'
-import { CUSTOMERS } from '../mock-customers';
+import { Customer } from '../customer';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'app-customers',
@@ -10,24 +10,28 @@ import { CUSTOMERS } from '../mock-customers';
 
 export class CustomersComponent implements OnInit {
 
-  customers = CUSTOMERS;
-  // customer: Customer = {
-  //   id: 1,
-  //   firstname: 'Jan',
-  //   lastname: 'Kowalski',
-  //   phoneNumber: '693785343',
-  //   appointment:  new Date()
-
-  // };
+  customers: Customer[];
   selectedCustomer: Customer;
 
-  constructor() { }
+  constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
+    this.getCustomers();//Wczytaj dane z serwisu zaraz przy starcie
   }
   
+  /*
+    zapisz sie do obserwowania danych
+    gdy będą, wstaw je do zmiennej customers
+    async wow
+  */
+  getCustomers(): void {
+    this.customerService.getCustomers()
+    .subscribe(customers => this.customers = customers);
+  }
+
+
   onSelect(customer: Customer): void {
-    this.selectedCustomer = customer;
+    this.selectedCustomer = customer;//pobierz wybranego klienta
   }
 
 
