@@ -5,20 +5,4 @@
         <span class="badge">{{customer.id}}</span> {{customer.firstname}} {{customer.lastname}} {{customer.appointment | date: 'medium'}}
     </li>
 </ul>
-<div *ngIf="selectedCustomer">
-    <h2>Informacje o {{selectedCustomer.firstname | uppercase}} {{selectedCustomer.lastname | uppercase}}</h2><br>
-    <div><span>Id clienta: </span>{{selectedCustomer.id}}</div>
-    <div><span>Numer telefonu: </span>{{selectedCustomer.phoneNumber}}</div>
-    <div><span>Data wizyty: </span>{{selectedCustomer.appointment | date:'MMM d, y, h:mm:ss a'}}</div>
-        
-    <label>Ustaw datę wizyty</label>
-        <!-- <input [(ngModel)]="customer.appointment" placeholder="data wizyty"> -->
-        <dl-date-time-picker
-            startView="day"
-            maxView="year"
-            minView="minute"
-            minuteStep="5"
-            [(ngModel)]="selectedCustomer.appointment"
-            >
-        </dl-date-time-picker>
- </div>
+<app-customer-detail [customer]="selectedCustomer"></app-customer-detail>
