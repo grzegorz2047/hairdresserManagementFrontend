@@ -1,5 +1,6 @@
 
 <div class="whole">
+        <button  (click)="addNewCustomer()">Wstaw nowego klienta do bazy</button>  <br>
     <ul class="customers">
             <li *ngFor="let customer of customers">
             <a routerLink="/detail/{{customer.id}}">
@@ -7,10 +8,8 @@
             </a>
         </li>
     </ul>
-    <button  (click)="addNewCustomer()">dodaj nowego klienta do bazy</button>  <br>
-    <label>Id projektu do usunięcia:  </label>
-    <input [(ngModel)]="idToDelete" placeholder="id do usuniecia">
-    <button  (click)="removeCustomer()">usuń klienta</button>  
-
+    <div>
+        <label>Usuń wizytę</label><input [(ngModel)]="idToDelete" placeholder="id wizyty do usuniecia"> 
+        <button (click)="removeCustomer()">usuń klienta</button>  
+    </div>
 </div>
-<app-customer-detail [customer]="selectedCustomer"></app-customer-detail>
