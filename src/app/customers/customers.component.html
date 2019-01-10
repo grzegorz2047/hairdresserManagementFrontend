@@ -1,8 +1,8 @@
 <ul class="customers">
-        <li *ngFor="let customer of customers"
-            [class.selected]="customer === selectedCustomer"
-            (click)="onSelect(customer)">
-        <span class="badge">{{customer.id}}</span> {{customer.firstname}} {{customer.lastname}} {{customer.appointment | date: 'medium'}}
+        <li *ngFor="let customer of customers">
+        <a routerLink="/detail/{{customer.id}}">
+            <span class="badge">{{customer.id}}</span> {{customer.firstname}} {{customer.lastname}} {{customer.appointment | date: 'medium'}}
+        </a>
     </li>
 </ul>
 <app-customer-detail [customer]="selectedCustomer"></app-customer-detail>

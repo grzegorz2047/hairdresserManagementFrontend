@@ -11,8 +11,7 @@ import { CustomerService } from '../customer.service';
 export class CustomersComponent implements OnInit {
 
   customers: Customer[];
-  selectedCustomer: Customer;
-
+  
   constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
@@ -28,11 +27,4 @@ export class CustomersComponent implements OnInit {
     this.customerService.getCustomers()
     .subscribe(customers => this.customers = customers);
   }
-
-
-  onSelect(customer: Customer): void {
-    this.selectedCustomer = customer;//pobierz wybranego klienta
-  }
-
-
 }

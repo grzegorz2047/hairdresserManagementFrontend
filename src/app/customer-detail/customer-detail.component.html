@@ -1,17 +1,19 @@
 <div *ngIf="customer">
-    <h2>Informacje o {{customer.firstname | uppercase}} {{customer.lastname | uppercase}}</h2><br>
-    <div><span>Id clienta: </span>{{customer.id}}</div>
-    <div><span>Numer telefonu: </span>{{customer.phoneNumber}}</div>
-    <div><span>Data wizyty: </span>{{customer.appointment | date:'MMM d, y, h:mm:ss a'}}</div>
-        
-    <label>Ustaw datę wizyty</label>
-        <!-- <input [(ngModel)]="customer.appointment" placeholder="data wizyty"> -->
-        <dl-date-time-picker
-            startView="day"
-            maxView="year"
-            minView="minute"
-            minuteStep="5"
-            [(ngModel)]="customer.appointment"
-            >
-        </dl-date-time-picker>
+  <button (click)="goToPreviousSite()">wróć do listy klientów</button>
+  <h2>Informacje o {{customer.firstname | uppercase}} {{customer.lastname | uppercase}}</h2><br>
+  <div><label>Id clienta: </label>{{customer.id}}</div>
+  <div><label>Numer telefonu: </label>{{customer.phoneNumber}}</div>
+  <div><label>Data wizyty: </label>{{customer.appointment | date:'MMM d, y, h:mm:ss a'}}</div>
+      
+  <br>
+  <h3>Ustaw datę wizyty</h3>
+      <!-- <input [(ngModel)]="customer.appointment" placeholder="data wizyty"> -->
+      <dl-date-time-picker
+          startView="day"
+          maxView="year"
+          minView="minute"
+          minuteStep="5"
+          [(ngModel)]="customer.appointment"
+          >
+      </dl-date-time-picker>
  </div>
