@@ -4,4 +4,5 @@ export class Customer {
     lastname: string;
     phoneNumber: string;
     appointment: Date; /* epoch */
+    serviceCost: number;
 }

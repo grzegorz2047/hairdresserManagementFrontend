@@ -11,7 +11,7 @@ import { CustomerService } from '../customer.service';
 export class CustomersComponent implements OnInit {
 
   customers: Customer[];
-  
+  idToDelete: number = 0;
   constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
@@ -27,4 +27,14 @@ export class CustomersComponent implements OnInit {
     this.customerService.getCustomers()
     .subscribe(customers => this.customers = customers);
   }
+
+  addNewCustomer(): void {
+    this.customerService.addNewCustomer();
+  }
+
+  removeCustomer(): void {
+    this.customerService.removeCustomerById(this.idToDelete);
+  }
+
+
 }

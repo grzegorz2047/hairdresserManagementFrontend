@@ -1,8 +1,15 @@
-<ul class="customers">
-        <li *ngFor="let customer of customers">
-        <a routerLink="/detail/{{customer.id}}">
-            <span class="badge">{{customer.id}}</span> {{customer.firstname}} {{customer.lastname}} {{customer.appointment | date: 'medium'}}
-        </a>
-    </li>
-</ul>
+
+<div class="whole">
+    <ul class="customers">
+            <li *ngFor="let customer of customers">
+            <a routerLink="/detail/{{customer.id}}">
+                <span class="badge">{{customer.id}}</span> {{customer.firstname}} {{customer.lastname}} {{customer.appointment | date: 'medium'}}
+            </a>
+        </li>
+    </ul>
+    <button  (click)="addNewCustomer()">dodaj nowego klienta do bazy</button>  <br>
+    <input [(ngModel)]="idToDelete" placeholder="id do usuniecia">
+    <button  (click)="removeCustomer()">usuń klienta</button>  
+
+</div>
 <app-customer-detail [customer]="selectedCustomer"></app-customer-detail>

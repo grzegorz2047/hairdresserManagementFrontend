@@ -3,6 +3,10 @@
     color: white;
 }
 
+.whole {
+    
+}
+
 .customers {
     margin: 0 0 2em 0;
     list-style-type: none;
@@ -50,4 +54,27 @@
     height: 1.8em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
+}
+button {
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+button:visited {
+    color: #607D8B;
+}
+
+button:hover {
+    color: #039BE5;
+    background-color: #cfd8dc;
+}
+
+button.active {
+    color: #039BE5;
 }

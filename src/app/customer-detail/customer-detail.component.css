@@ -3,7 +3,7 @@ label {
     width: 15em;
     margin: .5em 0;
     color:  #607D8B;
-    font-weight: bold;   
+    font-weight: bold; 
 }
 
 button {
@@ -25,4 +25,9 @@ button:disabled {
     background-color: #eee;
     color: #ccc;
     cursor: auto;
+}
+
+.whole {
+    width: 50%;
+    margin: 0 auto;
 }
