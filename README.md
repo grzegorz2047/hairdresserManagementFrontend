@@ -1,4 +1,8 @@
 # AngularFryzjerApp
+angulara
+Jest to projekt tworzony bazując na oficjalnym poradniu z oficjalnej strony [angulara](https://angular.io/tutorial)
+
+Głównym celem tej pracy było wykonanie projektu na uczelnie oraz nauczenie się czegoś nowego z perspektywy frontendu.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 
